@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+input {
+    height: 25px;
+    align-items: center;
+    padding-left: 1em;
+}
+input[required]{
+    background-color: aqua;
+}
+
+.content-box{
+    position: relative;
+    top: -8px;
+    left: 5px;
+}
+button{
+    margin-top: 20px;
+    border-radius: 1em;
+    border: none;
+    width: 5rem;
+    height: 2rem;
+    background-color: aqua;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td>Ho ten:</td>
+                    <td><input type="text" id= "name" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Dia chi:</td>
+                    <td><input type="text" id="place" size="40"/></td>
+                </tr>
+                <tr>
+                    <td>Gioi tinh:</td>
+                    <td>
+                        <input type="radio" name="sex" value="male"/><span class="content-box">Nam</span>
+                        <input type="radio" name="sex" value="female"/><span class="content-box">Nu</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngay sinh</td>
+                    <td><input type="text" id="birth" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" id="email" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Dien thoai:</td>
+                    <td><input type="text" id="phone" size="40"/></td>
+                </tr>
+                <tr>
+                    <td>Khoa dk:</td>
+                    <td>
+                        <input type="checkbox" name="cource" value="tienganh"/><span class="content-box">Tieng anh</span>
+                        <input type="checkbox" name="cource" value="quantri"/><span class="content-box">Quan tri</span>
+                        <input type="checkbox" name="cource" value="cntt"/><span class="content-box">CNTT</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ten su dung:</td>
+                    <td><input type="text" id="username" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Mat khau:</td>
+                    <td><input type="password" id="pass" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Nhac lai Mat khau:</td>
+                    <td><input type="password" id="repass" size="40" required/></td>
+                </tr>
+                <tr>
+                    <td>Ghi chu</td>
+                    <td>
+                        <textarea id="note" cols="31" rows="6"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anh chan dung</td>
+                    <td><input type="file" id="avatar"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                    <button onclick="submit()">Chap nhan</button>
+                        <button onclick="quit()">Bo qua</button>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
