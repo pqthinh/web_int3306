@@ -35,11 +35,15 @@ input[type="button"]{
     height: 2rem;
     background-color: aqua;
 }
+.error {
+    color: red;
+    font-size: 16px;
+}
 </style>
 </head>
 <body>
     <div class="container">
-        <form action="" method="post">
+        <form id="form">
             <table>
                 <tr>
                     <td>Ho ten:</td>
@@ -61,7 +65,7 @@ input[type="button"]{
                 </tr>
                 <tr>
                     <td>Ngay sinh</td>
-                    <td><input type="date" id="birth" class="required"/></td>
+                    <td><input type="text" id="birth" placeholder="nn/tt/nnnn" class="required"/></td>
                     <td class="error" id="error_birth"></td>
                 </tr>
                 <tr>
@@ -112,8 +116,8 @@ input[type="button"]{
                 <tr>
                     <td></td>
                     <td>
-                        <input type="button" onclick="javascript:Chapnhan();" value="Chấp nhận">
-				        <input type="button" onclick="javascript:Boqua();" value="Bỏ qua">
+                        <input type="button" onclick="javascript:ChapNhan();" value="Chấp nhận">
+				        <input type="button" onclick="javascript:quit();" value="Bỏ qua">
                     </td>
                 </tr>
             </table>
