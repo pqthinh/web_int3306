@@ -1,0 +1,43 @@
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container div {
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    padding: 10px;
+    flex: 1;
+}
+.information {
+    font-size: x-small;
+    color: #312b2b;
+    text-align: center;
+    margin: 30px 0 30px;
+}
+.information a {
+    text-decoration: none;
+    font-size: small;
+}
+
+article {
+    flex: 3;
+    order: 1;
+    padding-left: 40px;
+}
+aside {
+    flex: 1;
+}
+
+@media (max-width:600px) {
+    div.container {display:block;}
+    article {padding-left:0px;}
+}

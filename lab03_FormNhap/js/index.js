@@ -1,3 +1,5 @@
+const { default: submit } = require("./postdata")
+
 document.getElementById('name').focus()
 
 document.getElementById('name').onkeyup = function(e) {
@@ -63,8 +65,8 @@ function checkEmail(email) {
 function laTenSD(name) {
 	//name = formatName(name)
 	ss=name.split(' ')
-	console.log(ss)
-	console.log(name)
+	// console.log(ss)
+	// console.log(name)
     const reg0= /^[A-Za-z]+$/
     for(i=0;i<ss.length;i++) 
 		if(!reg0.test(ss[i])) return false
@@ -178,8 +180,46 @@ function ChapNhan() {
 
 	//neu tất cả các dữ liệu được nhập đúng đắn
 	//submit form
-	if (okie) document.getElementById("form").submit();
+	if (okie) {
+		$('#form').submit(function (event) {
+			event.preventDefault()
+			var data1 = {
+			  name:$('input[name="name"]').val(),
+			  place: $('input[name="place"]').val(),
+			  sex: $('input[name="sex"]').val(),
+			  date: $('input[name="birth"]').val(),
+			  email: $('input[name="email"]').val(),
+			  phone: $('input[name="phone"]').val(),
+			  course: $('input[name="course"]').val(),
+			  user: $('input[name="username"]').val(),
+			  pass: $('input[name="pass"]').val(),
+			  note: $('input[name="note"]').val()
+			}
+			console.log(data1)
+		
+			// $.post('./php/user/add.php',{data: $('#form').serialize()})
+			// .done(data=>{
+			//     console.log(data)
+			// })
+			
+			// Ajax Function to send a get request
+			$.ajax({
+			  type: "POST",
+			  url: '/php/user/add.php',
+			  contentType: 'application/json',
+			  data: data1,
+			  success: function(response){
+				  //if request if made successfully then the response represent the data
+				alert(response)
+			  },
+			  fail: function(res) {
+				alert(0)
+			  }
+			})
+		})
+	}
 }
+
 function quit() {
     //return
     document.location.href = "";
