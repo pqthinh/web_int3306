@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 90%;
+            max-width: 800px;
+            font: 0.9em/1.2 Arial, Helvetica, sans-serif;
+            margin: 2em auto;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 10px;
+        }
+        @media screen and (max-width: 500px) {
+            .container {
+                display: block;
+            }
+            header, footer, .container div {
+                margin-top: 10px;
+            }
+        }
+
+        header, footer, .container> div {
+            background: lightblue;
+            border: 1px solid rgb(41, 157, 202);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .acknowledgment {
+            color: #999;
+            text-align: center;
+            margin: 30px 30px;
+            font-size: x-small;
+        }
+
+        header {
+            grid-column: 1/13;
+            grid-row: 1;
+        }
+        footer {
+            grid-column: 1/13;
+            grid-row: 12;
+        }
+
+        .main {
+            grid-column: 1/7;
+            grid-row: 2/5;
+        }
+        .second {
+            grid-column: 7/11;
+            grid-row: 2/3;
+        }
+        .b1 {
+            grid-column: 1/3;
+            grid-row: 11/12;
+        }
+        .b2 {
+            grid-column: 3/5;
+            grid-row: 9/12;
+        }
+        .b3 {
+            grid-column: 5/7;
+            grid-row: 7/12;
+        }
+        .b4 {
+            grid-column: 7/9;
+            grid-row: 4/12;
+        }
+        .b5 {
+            grid-column: 9/11;
+            grid-row: 3/12;
+        }
+        .b6 {
+            grid-column: 11/13;
+            grid-row: 2/12;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>This is my lovely blog</header>
+        <div class="main">
+            <h1>Main</h1>
+            <p>Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+        </div>
+
+        <div class="second">
+            <h2>Second</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est.</p>
+        </div>
+
+        <div class="b1">1</div>
+        <div class="b2">2</div>
+        <div class="b3">4</div>
+        <div class="b4">5</div>
+        <div class="b5">6</div>
+        <div class="b6">7</div>
+        <footer>Contact me@mysite.com</footer>
+    </div>
+    <div class="acknowledgment">Supported by: <a href="http://itest.com.vn">iTest Team</a></div>
+</body>
+</html>
