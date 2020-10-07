@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li onclick="javascript:avoid(this);">&raquo; Quản lý cán bộ (Đăng ký thông tin)</li>
+                <li onclick="javascript:avoid(this);">&raquo; Phân quyền</li>
+                <li onclick="javascript:avoid(this);">&raquo; Cổng thông tin đào tạo và người học</li>
+                <li onclick="javascript:avoid(this);">&raquo; Quản lý văn bản hồ sơ công việc</li>
+                <li onclick="javascript:avoid(this);">&raquo; Hành chính công</li>
+                <li onclick="javascript:avoid(this);">&raquo; Hệ thống thông tin báo cáo</li>
+            </ul>
+        </div>
+        <div class="content"></div>
+    </div>
+    
+
+    </div>
+    <script>
+        function reset() {
+            var liNode = document.getElementsByTagName('li')
+            for(var i=0; i< liNode.length; i++) {
+                liNode[i].className=''
+            }
+        }
+        function avoid(e) {
+            reset()
+            // e.classList.add('active')
+            e.className= "active"
+            // console.log(e)
+            // alert(e)
+            document.querySelector('.content').innerHTML = e.textContent
+        } 
+    </script>
+</body>
+</html>
