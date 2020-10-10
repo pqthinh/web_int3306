@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, tr,td {
+            border: 1px solid #000;
+        }
+        .header{
+            font-weight: 600;
+            background: purple;
+            text-align: center;
+        }
+        tr:nth-child(2n) {
+            background: lightgray;
+        }
+        tr:nth-child(2n+3) {
+            background: gray;
+        }
+        tr:nth-child(n+2):hover {
+            background: lightgreen;
+        }
+        tr {
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="extend">
+            <button>Them</button>
+            <button>Sua</button>
+            <button>Xoa</button>
+            <button ondblclick="resetWindow()">Reset</button>
+        </div>
+        <table>
+            <tr class="header">
+                <td><input type="checkbox" onclick="selectAll()"/></td>
+                <td>Ho ten</td>
+                <td>Ngay sinh</td>
+                <td>Gioi tinh</td>
+            </tr>
+            <tr ondblclick="javascript:avoid(this)">
+                <td><input type="checkbox" onclick="avoid(this.parentNode.parentNode)"/></td>
+                <td>Hoang Van A</td>
+                <td>2/2/2020</td>
+                <td>Nam</td>
+            </tr>
+            <tr ondblclick="javascript:avoid(this)">
+                <td><input type="checkbox" onclick="avoid(this.parentNode.parentNode)"/></td>
+                <td>Tran Thi B</td>
+                <td>1/1/2001</td>
+                <td>Nu</td>
+            </tr>
+            <tr ondblclick="javascript:avoid(this)">
+                <td><input type="checkbox" onclick="avoid(this.parentNode.parentNode)"/></td>
+                <td>Dao Xuan C</td>
+                <td>3/3/2003</td>
+                <td>Nam</td>
+            </tr>
+            <tr ondblclick="javascript:avoid(this)" >
+                <td><input type="checkbox" onclick="avoid(this.parentNode.parentNode)"/></td>
+                <td>Tong Minh D</td>
+                <td>1/1/2002</td>
+                <td>Nam</td>
+            </tr>
+            <tr ondblclick="javascript:avoid(this)">
+                <td><input type="checkbox" onclick="avoid(this.parentNode.parentNode)"/></td>
+                <td>nguyen Tra My</td>
+                <td>3/6/2002</td>
+                <td>Nu</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        // var inputs = document.getElementsByTagName('input')
+        function reset() {
+            // tr = document.getElementsByTagName('tr')
+            // for(var i=1;i<tr.length;i++)
+            //     tr[i].className = ""
+            document.querySelector('#selected') ? document.querySelector('#selected').id="" : ''
+        }
+        function avoid(r) {
+            reset()
+            r.id = 'selected'
+            console.log(r)
+            // r.parentElement.children[0].children[0].checked= true
+            r.children[0].children[0].checked = !r.children[0].children[0].checked
+            // document.getElementsByClassName('selected')[0].style.background = 'green'
+            if(r.children[0].children[0].checked) 
+                r.style.backgroundColor = 'yellow';
+            else {
+                r.sectionRowIndex % 2!=0 ? r.style.backgroundColor = 'lightgray' :  r.style.backgroundColor = 'gray'
+                
+                
+                // tr:nth-child(2n) {
+                //     background: lightgray;
+                // }
+                // tr:nth-child(2n+3) {
+                //     background: gray;
+                // }
+                // document.getElementById("selected")
+            }
+        }
+        function selectAll() {
+            tr= document.querySelectorAll('tr')
+            for(var i=1;i<tr.length;i++)
+                if(tr[0].checked) tr[i].children[0].children[0].checked=true
+                else tr[i].children[0].children[0].checked = !tr[i].children[0].children[0].checked
+        }
+        function resetWindow() {
+            location.reload()
+        }
+
+    </script>
+    <style>
+        tr #selected {
+            background: yellowgreen !important;
+        }
+    </style>
+</body>
+</html>
