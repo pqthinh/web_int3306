@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Pham Quang Thinh",
+            "date": "2/2/2000",
+            "gender": "Nam"
+        },
+        {
+            "id": 2,
+            "name": "Pham Quang B",
+            "date": "2/2/2000",
+            "gender": "Nam"
+        },
+        {
+            "id": 3,
+            "name": "Pham Quang C",
+            "date": "2/2/2000",
+            "gender": "Nam"
+        },
+        {
+            "id": 4,
+            "name": "Pham Quang Thinh 2",
+            "date": "2/2/2000",
+            "gender": "Nam"
+        }
+    ]
+}
